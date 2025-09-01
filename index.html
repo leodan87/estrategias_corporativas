@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Estratégico - Jaraseg</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .perspective-card {
+            border-left-width: 4px;
+            transition: all 0.3s ease;
+        }
+        .perspective-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .objective-card {
+            transition: all 0.3s ease;
+        }
+        .objective-card:hover {
+            background-color: #4A5568; /* a slightly lighter gray on hover */
+        }
+        .arrow-container svg {
+            width: 48px;
+            height: 48px;
+        }
+        /* Estilos para el logo de la cabecera */
+        .brand-logo {
+            border-radius: 10px;
+            filter: drop-shadow(0 8px 18px rgba(0,0,0,0.5));
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+            <!-- Header responsive: logo a la izquierda en md+ y centrado en móviles -->
+            <header class="mb-12">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-center gap-6">
+                    <!-- Logo: centrado en móvil, a la izquierda en pantallas md+ -->
+                    <img src="assets/jaraseg.png" alt="Logotipo Jaraseg" role="img" aria-label="Logotipo Jaraseg" class="brand-logo mx-auto md:mx-0 md:mr-6 w-28 md:w-36 lg:w-44 object-contain bg-white p-3 rounded-xl">
+
+                    <!-- Texto: centrado en móvil, alineado a la izquierda en md+ cuando está junto al logo -->
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Mapa Estratégico</h1>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-amber-400">Jaraseg</h2>
+                        <p class="text-lg text-gray-400 mt-4 max-w-3xl mx-auto md:mx-0 italic">
+                            "Ser el socio estratégico líder en soluciones de seguridad tecnológica, garantizando la integridad de las operaciones de nuestros clientes con innovación y excelencia."
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+        <!-- Perspectives Grid -->
+        <div class="flex flex-col items-center space-y-8">
+
+            <!-- Perspective: Financiera -->
+            <div id="financiera" class="w-full max-w-5xl bg-gray-800 rounded-xl shadow-2xl p-6 border-l-4 border-green-400 perspective-card">
+                <h3 class="text-2xl font-bold mb-1 text-green-300">Perspectiva Financiera</h3>
+                <p class="text-sm italic text-gray-400 mb-6">Para tener éxito financiero, ¿cómo debemos mostrarnos ante nuestros accionistas?</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <!-- Objective 1 -->
+                    <div class="bg-gray-700 p-4 rounded-lg objective-card">
+                        <h4 class="font-semibold text-lg text-white">1. Impulsar el Crecimiento Sostenible</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
+                            <li>Tasa de crecimiento de ingresos recurrentes (+12%)</li>
+                            <li>Aprobación de nuevos contratos en sectores de alto valor</li>
+                        </ul>
+                    </div>
+                    <!-- Objective 2 -->
+                    <div class="bg-gray-700 p-4 rounded-lg objective-card">
+                        <h4 class="font-semibold text-lg text-white">2. Maximizar la Rentabilidad</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
+                            <li>Margen Operativo / EBITDA (≥ 20%)</li>
+                            <li>Retorno sobre la Inversión (ROI) en tecnología</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow -->
+            <div class="arrow-container text-amber-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
+                </svg>
+            </div>
+
+            <!-- Perspective: Cliente -->
+            <div id="cliente" class="w-full max-w-5xl bg-gray-800 rounded-xl shadow-2xl p-6 border-l-4 border-sky-400 perspective-card">
+                <h3 class="text-2xl font-bold mb-1 text-sky-300">Perspectiva del Cliente</h3>
+                <p class="text-sm italic text-gray-400 mb-6">Para alcanzar nuestra visión, ¿cómo debemos mostrarnos ante nuestros clientes?</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-gray-700 p-4 rounded-lg objective-card">
+                        <h4 class="font-semibold text-lg text-white">3. Garantizar Máxima Confianza</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
+                            <li>Cumplimiento de SLA (≥ 98.5%)</li>
+                            <li>Net Promoter Score (NPS ≥ 80)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg objective-card">
+                        <h4 class="font-semibold text-lg text-white">4. Ser Socio Estratégico</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
+                            <li>Tasa de retención de clientes (≥ 93%)</li>
+                            <li>Adopción de nuevos servicios por cliente</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Arrow -->
+            <div class="arrow-container text-amber-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
+                </svg>
+            </div>
+
+            <!-- Perspective: Procesos Internos -->
+            <div id="procesos" class="w-full max-w-5xl bg-gray-800 rounded-xl shadow-2xl p-6 border-l-4 border-red-400 perspective-card">
+                <h3 class="text-2xl font-bold mb-1 text-red-300">Perspectiva de Procesos Internos</h3>
+                <p class="text-sm italic text-gray-400 mb-6">Para satisfacer a nuestros clientes, ¿en qué procesos debemos sobresalir?</p>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-gray-700 p-4 rounded-lg objective-card">
+                        <h4 class="font-semibold text-lg text-white">5. Excelencia en Vigilancia y Respuesta</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
+                            <li>Tiempo de respuesta (≤ 4.5 min)</li>
+                            <li>Cumplimiento de rondas (≥ 96%)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg objective-card">
+                        <h4 class="font-semibold text-lg text-white">6. Maximizar Fiabilidad Tecnológica</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
+                            <li>Disponibilidad de equipos (≥ 99.5%)</li>
+                            <li>Reducción de falsas alarmas</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg objective-card">
+                        <h4 class="font-semibold text-lg text-white">7. Optimizar Gestión de Información</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
+                            <li>Reportes a tiempo completos (< 10 min ≥ 98%)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow -->
+            <div class="arrow-container text-amber-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
+                </svg>
+            </div>
+
+            <!-- Perspective: Aprendizaje y Crecimiento -->
+            <div id="aprendizaje" class="w-full max-w-5xl bg-gray-800 rounded-xl shadow-2xl p-6 border-l-4 border-purple-400 perspective-card">
+                <h3 class="text-2xl font-bold mb-1 text-purple-300">Perspectiva de Aprendizaje y Crecimiento</h3>
+                <p class="text-sm italic text-gray-400 mb-6">¿Cómo mantendremos nuestra capacidad de cambiar y mejorar?</p>
+                <div class="grid md:grid-cols-3 gap-4">
+                     <div class="bg-gray-700 p-4 rounded-lg objective-card">
+                        <h4 class="font-semibold text-lg text-white">8. Desarrollar un Equipo de Élite</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
+                            <li>Capacitación (24h/año)</li>
+                            <li>Rotación de talento (≤ 8%)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg objective-card">
+                        <h4 class="font-semibold text-lg text-white">9. Fomentar Cultura Proactiva</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
+                            <li>Índice Cultura de Seguridad (≥ 82/100)</li>
+                            <li>N° de mejoras implementadas</li>
+                        </ul>
+                    </div>
+                     <div class="bg-gray-700 p-4 rounded-lg objective-card">
+                        <h4 class="font-semibold text-lg text-white">10. Impulsar Innovación y Certificación</h4>
+                        <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
+                            <li>Personal con certificaciones (≥ 60%)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer / Logic -->
+        <footer class="text-center mt-12 py-6 border-t border-gray-700">
+            <h3 class="text-xl font-bold text-amber-400">Lógica Estratégica</h3>
+            <p class="text-gray-400 mt-2 max-w-4xl mx-auto">
+                Al invertir en un <strong class="text-purple-300">equipo de élite</strong> y fomentar una <strong class="text-purple-300">cultura proactiva</strong>, logramos la <strong class="text-red-300">excelencia en nuestros procesos</strong>. Esto nos permite garantizar la <strong class="text-sky-300">confianza de nuestros clientes</strong>, lo que finalmente conduce a un <strong class="text-green-300">crecimiento rentable y sostenible</strong>.
+            </p>
+            <div class="mt-8 flex justify-center items-center space-x-2 text-gray-500 hover:text-white transition-colors duration-300">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-sm font-right">@leodan87</span>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
